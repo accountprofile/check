@@ -1,4 +1,4 @@
-﻿<!-- account.html -->
+<!-- account.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,8 +177,14 @@
 
   <script>
     function logout() {
-      window.location.href = "index.html"; // Replace with your login page filename
+      window.location.href = "index.html"; // Replace with your login page
     }
+
+    // Automatically update the "Last updated" date
+    const lastUpdatedElement = document.getElementById("last-updated");
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    lastUpdatedElement.textContent = "Last updated: " + today.toLocaleDateString("en-UK", options);
   </script>
 
 </body>
