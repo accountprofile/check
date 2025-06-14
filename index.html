@@ -1,236 +1,78 @@
-﻿<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Access Bank UK Online Banking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Under Maintenance</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7f9;
-      margin: 0;
-      padding: 0;
+      background-color: #f2f2f2;
       color: #333;
-    }
-
-    header, footer {
-      background-color: #002f6c;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #004b8d;
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      background-color: #e6f0fa;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero a.button {
-      background-color: #0072ce;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .login-container {
-      display: none;
-      max-width: 400px;
-      background-color: #fff;
-      padding: 2rem;
-      margin: 2rem auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .login-container h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #002f6c;
-    }
-
-    .login-container label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .login-container input[type="text"],
-    .login-container input[type="password"] {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .login-container input[type="submit"] {
-      background-color: #0072ce;
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .login-container input[type="submit"]:hover {
-      background-color: #005ba1;
-    }
-
-    .features {
+      font-family: Arial, sans-serif;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 2rem;
-      background-color: #fff;
-    }
-
-    .feature {
-      flex: 1 1 300px;
-      margin: 1rem;
-      background-color: #f9fafb;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .feature h3 {
-      margin-top: 0;
-      color: #0072ce;
-    }
-
-    #message {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
-      margin-top: 1rem;
+      flex-direction: column;
+    }
+    .message {
+      max-width: 600px;
+    }
+    img.logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff4c4c;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    #countdown {
+      font-size: 1.5em;
+      margin-top: 15px;
       font-weight: bold;
+      color: #555;
     }
-
-    #message.success {
-      color: green;
-    }
-
-    #message.error {
-      color: red;
-    }
-
-    @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
+    .contact {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #666;
     }
   </style>
 </head>
 <body>
+  <div class="message">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>Site Under Maintenance</h1>
+    <p>We are currently performing scheduled maintenance.<br>Please check back soon.</p>
+    <div id="countdown">Time remaining: loading...</div>
+    <div class="contact">Need help? Email us at <a href="mailto: blejohsex@gmail.com">blejohsex@gmail.com</a></div>
+  </div>  <script>
+    // Countdown to 24 hours from now
+    const targetTime = new Date().getTime() + (24 * 60 * 60 * 1000);
 
-  <header>
-    <h1>Access Bank UK</h1>
-  </header>
+    const countdownElement = document.getElementById('countdown');
 
-  <nav>
-    <a href="#">Personal Banking</a>
-    <a href="#">Business Banking</a>
-    <a href="#">Private Banking</a>
-    <a href="#">Contact Us</a>
-  </nav>
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
 
-  <section class="hero">
-    <h2>Secure Online Banking</h2>
-    <p>Manage your finances anytime, anywhere with our 24/7 online banking platform.</p>
-    <a class="button" href="#" onclick="showLogin()">Log In</a>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h3>24/7 Access</h3>
-      <p>Check balances, transfer funds, and view statements at your convenience.</p>
-    </div>
-    <div class="feature">
-      <h3>Enhanced Security</h3>
-      <p>Two-factor authentication ensures your account remains protected.</p>
-    </div>
-    <div class="feature">
-      <h3>Easy Navigation</h3>
-      <p>Intuitive design allows quick access to all your banking needs.</p>
-    </div>
-  </section>
-
-  <!-- Login Section -->
-  <div class="login-container" id="loginForm">
-    <h2>User Login</h2>
-    <form onsubmit="return validateLogin(event)">
-      <label for="username">UserID</label>
-      <input type="text" id="username" required />
-
-      <label for="password">Password</label>
-      <input type="password" id="password" required />
-
-      <input type="submit" value="Log In" />
-    </form>
-    <div id="message"></div>
-  </div>
-
-  <footer>
-    &copy; 2025 Access Bank UK Limited. All rights reserved.
-  </footer>
-
-  <script>
-    function showLogin() {
-      document.getElementById('loginForm').style.display = 'block';
-      window.scrollTo({
-        top: document.getElementById('loginForm').offsetTop - 50,
-        behavior: 'smooth'
-      });
-    }
-
-    function validateLogin(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-      const messageBox = document.getElementById('message');
-
-      if (username === 'Johnnydepp69126' && password === 'Depp69126') {
-        messageBox.textContent = "Login Successful!";
-        messageBox.className = "success";
-        setTimeout(() => {
-          window.location.href = "account 2.html"; // Redirect to account dashboard
-        }, 1500);
-      } else {
-        messageBox.textContent = "Incorrect credentials!";
-        messageBox.className = "error";
+      if (distance <= 0) {
+        countdownElement.innerHTML = "We’re almost back!";
+        return;
       }
 
-      return false;
-    }
-  </script>
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-</body>
+      countdownElement.innerHTML = `Time remaining: ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script></body>
 </html>
